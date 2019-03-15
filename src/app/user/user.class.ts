@@ -12,7 +12,7 @@ export class User {
 
 
     constructor(userName: string, password: string, firstName: string, lastName: string, 
-        phone: string, email:string, isReviewer: false, isAdmin: false, isActive: true)
+        phone: string, email:string)
         {
         this.id = 0;
         this.userName = userName;
@@ -21,9 +21,9 @@ export class User {
         this.lastName = lastName;
         this.phone = phone;
         this.email = email;
-        this.isReviewer = isReviewer;
-        this.isAdmin = isAdmin;
-        this.isActive = isActive;
+        this.isReviewer = false;
+        this.isAdmin = false;
+        this.isActive = true;
     }
 
 }

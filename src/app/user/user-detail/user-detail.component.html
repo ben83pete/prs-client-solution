@@ -1,3 +1,29 @@
-<p>
-  user-detail works!
-</p>
+<div>
+  <span class= "font-weight-bold">User Details |</span>
+  <a routerLink= '/user/list'> Return to User List</a>
+</div>
+
+<table class="border table table-sm" *ngIf="userDetail">
+  <tr>
+    <td>Name</td><td>{{userDetail.firstName}} {{userDetail.lastName}}</td>
+  </tr>
+  <tr>
+    <td>User Name</td><td>{{userDetail.userName}}</td>
+  </tr>
+  <tr>
+    <td>Phone</td><td>{{userDetail.phone}}</td>
+  </tr>
+  <tr>
+    <td>Email</td><td>{{userDetail.email}}</td>
+  </tr>
+  <tr>
+    <td>Reviewer</td><td>{{userDetail.isReviewer}}</td>
+  </tr>
+  <tr>
+    <td>Admin</td><td>{{userDetail.isAdmin}}</td>
+  </tr>
+  <tr>
+    <td>Active</td><td>{{userDetail.isActive}}</td>
+  </tr>
+
+</table>

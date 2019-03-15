@@ -1,16 +1,21 @@
 <div>
-  <table>
-    <Th>
+<span>User List |</span>
+<a routerLink = '/user/create'> Create New User</a>
+</div>
+<div>
+  <table class ="table">
+    <thead class="font-weight-bold text-nowrap">
       <tr>
-            <td>Name:</td>
-            <td>User Name:</td>
-            <td>Phone:</td>
-            <td>Email:</td>
-            <td>Reviewer:</td>
-            <td>Admin:</td>
-            <td>Actions:</td>
+        <th>Name:</th>
+        <th>User Name:</th>
+        <th>Phone:</th>
+        <th>Email:</th>
+        <th>Reviewer:</th>
+        <th>Admin:</th>
+        <th>Active:</th>
+        <th>Actions:</th>
       </tr>
-    </Th>
+      
     <tbody>
     <tr *ngFor = "let user of users">
       <td>{{user.firstName}} {{user.lastName}}</td>
@@ -21,8 +26,8 @@
       <td>{{user.isAdmin}}</td>
       <td>{{user.isActive}}</td>
       <td>
-        <a routerLink ="/user/detail/{{user.id}}">Detail | </a>
-        <a routerLink ="/user/edit/{{user.id}}">Edit</a>
+        <a routerLink = "/user/detail/{{user.id}}">Detail | </a>
+        <a routerLink = "/user/edit/{{user.id}}">Edit</a>
       </td>
     </tr>
     </tbody>

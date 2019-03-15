@@ -18,7 +18,17 @@ export class UserService {
     return this.http.get(url + "users/" + id ) as Observable<User>; 
   }
 
+  create(user: User):Observable<any>{
+    return this.http.post(url +"users/", user) as Observable<any>;
+  }
+
+  update(user: User):Observable<any>{
+    return this.http.put(`${url}users/${user.id}`, user) as Observable<any>;
+  }
   
+  delete(user: User):Observable<any>{
+    return this.http.delete(`${url}users/${user.id}`) as Observable<any>;
+  }
 
   constructor(private http: HttpClient) { }
 }
