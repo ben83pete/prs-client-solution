@@ -1,0 +1,31 @@
+<div>
+  <table>
+    <Th>
+      <tr>
+            <td>Name:</td>
+            <td>User Name:</td>
+            <td>Phone:</td>
+            <td>Email:</td>
+            <td>Reviewer:</td>
+            <td>Admin:</td>
+            <td>Actions:</td>
+      </tr>
+    </Th>
+    <tbody>
+    <tr *ngFor = "let user of users">
+      <td>{{user.firstName}} {{user.lastName}}</td>
+      <td>{{user.userName}}</td>
+      <td>{{user.phone}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.isReviewer}}</td>
+      <td>{{user.isAdmin}}</td>
+      <td>{{user.isActive}}</td>
+      <td>
+        <a routerLink ="/user/detail/{{user.id}}">Detail | </a>
+        <a routerLink ="/user/edit/{{user.id}}">Edit</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
