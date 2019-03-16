@@ -12,6 +12,14 @@ export class UserCreateComponent implements OnInit {
 
   user: User = new User('','','','','','',);
 
+  // pwCheck() {
+  //   let pw = document.getElementById('PassInput')
+  //   if (pw.type === 'password') {
+  //     pw.type = "text";
+  //   }
+  //   else{pw.type = "password";}
+  // };
+
   save(): void{
     this.usersvc.create(this.user)
       .subscribe(
