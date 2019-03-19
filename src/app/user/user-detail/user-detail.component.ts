@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user.class';
-import { ActivatedRoute } from '@angular/router';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from '../../system/system.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -13,9 +13,27 @@ import { ActivatedRoute } from '@angular/router';
 export class UserDetailComponent implements OnInit {
 
   userDetail: User;
+  verify: boolean = false;
 
+  verifyDelete(): void{
+    this.verify = true;
+  }
 
-  constructor(private usersrv: UserService, private route: ActivatedRoute) { 
+  delete():void {
+    this.usersrv.delete(this.userDetail)
+    .subscribe(
+      resp => {
+        console.log("User Deleted", resp);
+        this.router.navigateByUrl("/user/list");
+      },
+      err => {
+        console.error("User Delete failed", err);
+      }
+    )
+  }
+
+  constructor(private usersrv: UserService, private route: ActivatedRoute,
+    private router: Router, private syssvc: SystemService) { 
       }    
 
   ngOnInit() {

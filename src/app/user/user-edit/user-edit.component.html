@@ -1,4 +1,58 @@
 <div>
-  <span class = "font-weight-bold">Edit User |</span>
-  <a routerLink= '/user/list'>Return to User List</a>
-</div>
+    <div>
+      <span class= "font-weight-bold">Edit User |</span>
+      <a routerLink= '/user/list'> Return to User List</a>
+    </div>
+  
+    <div *ngIf = 'user'>
+      <table>
+        <tr>
+          <td>Username</td>
+          <td><input [(ngModel)]='user.userName' class='inputstring' type= 'text'> </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input id='PassInput' [(ngModel)]='user.password' class='inputstring' type= 'password' 
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" 
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+             </td>
+              <!-- <td><input type="checkbox" onclick="pwCheck()">Show Password</td> -->
+        </tr> 
+        <!-- <tr>
+            <td>Retype Password</td>
+            <td><input [(ngModel)]='user.Password' class='inputstring' type= 'password'> </td>
+        </tr>  -->
+        <tr>
+          <td>First Name</td>
+          <td><input [(ngModel)] = 'user.firstName' class ='inputstring' type= 'text'></td>
+        </tr>
+        <tr> 
+          <td>Last Name</td>
+          <td><input [(ngModel)] = 'user.lastName' class = 'inputstring' type= 'text'></td>
+        </tr>
+        <tr>
+          <td>Phone Number</td> 
+          <td><input [(ngModel)] = 'user.phone' class = 'inputstring' type= 'text'></td>
+        </tr>
+        <tr>
+          <td>Email Address</td>
+          <td><input [(ngModel)] = 'user.email' class = 'inputstring' type= 'email'></td>
+        </tr>
+        <tr>
+            <td>Admin</td>
+            <td><input [(ngModel)]='user.isAdmin' class='inputstring' type= 'checkbox'> </td>
+          </tr> 
+          <tr>
+            <td>Reviewer</td>
+            <td><input [(ngModel)] ='user.isReviewer' class = 'inputstring' type='checkbox'></td>
+        <tr>
+            <tr>
+                <td>Active</td>
+                <td><input [(ngModel)] ='user.isActive' class = 'inputstring' type='checkbox'></td>
+            <tr>
+          <button (click)= "save()">Save</button>
+        </tr>  
+      </table>
+    </div>
+  </div>
+  

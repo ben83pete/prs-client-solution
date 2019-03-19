@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user.class';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from '../../system/system.service';
 
 @Component({
   selector: 'app-user-edit',
@@ -10,17 +11,34 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserEditComponent implements OnInit {
 
-  userEdit: User;
+  user: User;
 
-  constructor(private usersvc: UserService, private route: ActivatedRoute) { }
+  save(): void{
+    this.usersvc.update(this.user)
+    .subscribe(
+      resp =>{
+        console.log("update Successful: ", resp);
+        this.router.navigateByUrl("/user/list");
+      },
+      err => {
+        console.log("User Error", err);
+      }
+    )
+  }
+
+  constructor(private usersvc: UserService, private route: ActivatedRoute,
+    private router: Router, private syssvc: SystemService) { }
 
   ngOnInit() {
     let id = this.route.snapshot.params.id;
       this.usersvc.get(id)
         .subscribe(resp =>{
           console.log(resp);
-          this.userEdit = resp;
-        })
+          this.user = resp;
+        },
+        err=> {
+          console.error(err)
+        },)
   }
 
 }

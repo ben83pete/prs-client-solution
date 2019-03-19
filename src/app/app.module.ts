@@ -13,6 +13,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { LoginComponent } from './user/login/login.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
     UserCreateComponent,
     UserEditComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

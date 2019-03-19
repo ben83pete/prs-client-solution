@@ -1,0 +1,18 @@
+<div class = 'loginform'>
+  <table class = "table table-borderless table-dark" >
+    <tr>
+      <td class = 'text-nowrap'>User Name:</td>
+      <td><input [(ngModel)]= 'username' type = 'text'></td>
+    </tr>
+    <tr>
+        <td>Password:</td>
+        <td><input [(ngModel)]= 'password' type = 'password'></td>
+      </tr>
+      <tr>
+        <td><button (click) = 'logIn()' >Login</button></td>
+      </tr>
+      
+<!-- <td>&nbsp;</td> -->
+</table>
+<span class= 'text-danger' >{{message}}</span>
+</div>

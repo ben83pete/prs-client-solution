@@ -17,13 +17,21 @@
     <td>Email</td><td>{{userDetail.email}}</td>
   </tr>
   <tr>
-    <td>Reviewer</td><td>{{userDetail.isReviewer}}</td>
+    <td>Reviewer</td><td>{{userDetail.isReviewer ? "Yes" : "No"}}</td>
   </tr>
   <tr>
-    <td>Admin</td><td>{{userDetail.isAdmin}}</td>
+    <td>Admin</td><td>{{userDetail.isAdmin ? "Yes" : "No"}}</td>
   </tr>
   <tr>
-    <td>Active</td><td>{{userDetail.isActive}}</td>
+    <td>Active</td>
+    <td>{{userDetail.isActive ? "Yes" : "No"}}</td>
   </tr>
 
 </table>
+
+
+<button (click) = "verifyDelete()" class = 'btn btn-warning'> Delete</button>
+<span *ngIf='verify'>
+  <span> | </span>
+<button  (click)= "delete()" class = 'btn btn-danger' > Are you sure? </button>
+</span>
