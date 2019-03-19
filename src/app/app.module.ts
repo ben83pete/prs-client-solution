@@ -14,6 +14,10 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { LoginComponent } from './user/login/login.component';
+import { MenuComponent } from './system/menu/menu.component';
+import { MenuItemComponent } from './system/menu-item/menu-item.component';
+import { BooldispPipe } from './system/booldisp.pipe';
+import { SearchPipe } from './system/search.pipe';
 
 
 @NgModule({
@@ -26,6 +30,10 @@ import { LoginComponent } from './user/login/login.component';
     HomeComponent,
     AboutComponent,
     LoginComponent,
+    MenuComponent,
+    MenuItemComponent,
+    BooldispPipe,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,8 @@
+<app-menu></app-menu>
 <div>
 <span class= "font-weight-bold">User List |</span>
 <a routerLink = '/user/create'> Create New User</a>
+<span> | <input [(ngModel)]='searchCriteria' type='text'></span>
 </div>
 <div>
   <table class ="table">
@@ -12,19 +14,17 @@
         <th>Email:</th>
         <th>Reviewer:</th>
         <th>Admin:</th>
-        <th>Active:</th>
         <th>Actions:</th>
       </tr>
       
     <tbody>
-    <tr *ngFor = "let user of users">
+    <tr *ngFor = "let user of users | search:searchCriteria">
       <td>{{user.firstName}} {{user.lastName}}</td>
       <td>{{user.userName}}</td>
       <td>{{user.phone}}</td>
       <td>{{user.email}}</td>
-      <td>{{user.isReviewer}}</td>
-      <td>{{user.isAdmin}}</td>
-      <td>{{user.isActive}}</td>
+      <td>{{user.isReviewer | booldisp}}</td>
+      <td>{{user.isAdmin | booldisp}}</td>
       <td>
         <a routerLink = "/user/detail/{{user.id}}">Detail | </a>
         <a routerLink = "/user/edit/{{user.id}}">Edit</a>

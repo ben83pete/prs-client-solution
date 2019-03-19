@@ -13,6 +13,9 @@ export class UserListComponent implements OnInit {
 
   users: User[]
 
+  searchCriteria: string = '';
+
+
   constructor(private usersvc: UserService, private syssvc: SystemService ) { }
 
   ngOnInit() {
