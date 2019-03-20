@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../user.class'
-import { Subscriber } from 'rxjs';
 import { SystemService } from '../../system/system.service';
 
 @Component({
@@ -14,7 +13,6 @@ export class UserListComponent implements OnInit {
   users: User[]
 
   searchCriteria: string = '';
-
 
   constructor(private usersvc: UserService, private syssvc: SystemService ) { }
 

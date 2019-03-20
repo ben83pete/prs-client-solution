@@ -13,26 +13,17 @@ export class UserCreateComponent implements OnInit {
 
   user: User = new User('','','','','','',);
 
-  // pwCheck() {
-  //   let pw = document.getElementById('PassInput')
-  //   if (pw.type === 'password') {
-  //     pw.type = "text";
-  //   }
-  //   else{pw.type = "password";}
-  // };
-
-  save(): void{
+  save(): void {
     this.usersvc.create(this.user)
-      .subscribe(
-        resp =>{ // successful add
+      .subscribe(resp =>{ // successful add
           console.log(resp);
-          this.route.navigateByUrl('user/list');
+          this.router.navigateByUrl('user/list');
         },
         err =>{ console.error(err);} // error when adding new user
       );
   }
 
-  constructor(private route: Router, private usersvc: UserService,
+  constructor(private router: Router, private usersvc: UserService,
     private syssvc: SystemService ) { }
 
   ngOnInit() {

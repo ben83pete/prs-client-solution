@@ -19,6 +19,16 @@ import { MenuItemComponent } from './system/menu-item/menu-item.component';
 import { BooldispPipe } from './system/booldisp.pipe';
 import { SearchPipe } from './system/search.pipe';
 
+import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
+import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
+import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
+
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -34,12 +44,20 @@ import { SearchPipe } from './system/search.pipe';
     MenuItemComponent,
     BooldispPipe,
     SearchPipe,
+    VendorListComponent,
+    VendorDetailComponent,
+    VendorCreateComponent,
+    VendorEditComponent,
+    ProductListComponent,
+    ProductDetailComponent,
+    ProductCreateComponent,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]

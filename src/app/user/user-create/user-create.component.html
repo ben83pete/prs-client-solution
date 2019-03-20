@@ -14,15 +14,7 @@
       <tr>
           <td>Password</td>
           <td><input id='PassInput' [(ngModel)]='user.Password' class='inputstring' type= 'password' 
-            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" 
-            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
-           </td>
-            <!-- <td><input type="checkbox" onclick="pwCheck()">Show Password</td> -->
-      </tr> 
-      <!-- <tr>
-          <td>Retype Password</td>
-          <td><input [(ngModel)]='user.Password' class='inputstring' type= 'password'> </td>
-      </tr>  -->
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$"> </td>
       <tr>
         <td>First Name</td>
         <td><input [(ngModel)] = 'user.firstName' class ='inputstring' type= 'text'></td>
