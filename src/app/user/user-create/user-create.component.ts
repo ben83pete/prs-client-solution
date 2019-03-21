@@ -11,7 +11,7 @@ import { SystemService } from '../../system/system.service';
 })
 export class UserCreateComponent implements OnInit {
 
-  user: User = new User('','','','','','',);
+  user: User = new User('','','','','','');
 
   save(): void {
     this.usersvc.create(this.user)

@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+<div>
+  <span class= "font-weight-bold">Requests</span><span> | </span>
+  <span><a routerLink = '/request/create/'>Create New Request</a></span>
+</div>
+
+<div>
+  <table class='table'>
+    <thead>
+      <th>Description</th>
+      <th>Justification</th>
+      <th>Delivery Mode</th>
+      <th>Date Submitted</th>
+      <th>Total</th>
+      <th>Status</th>
+      <th>Reject Reason</th>
+      <th>Action:</th>
+      
+    </thead>
+    <tbody >
+      <tr *ngFor = "let request of requests">
+        <td>{{request.description}}</td>
+        <td>{{request.justification}}</td>
+        <td>{{request.delivery_Mode}}</td>
+        <td>{{request.submitDate}}</td>
+        <td>{{request.total}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.reject_Reason}}</td>
+        <td>
+            <a routerLink = "/request/detail/{{request.id}}">Detail | </a>
+            <a routerLink = "/request/edit/{{request.id}}">Edit</a>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

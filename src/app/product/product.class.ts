@@ -18,7 +18,7 @@ export class Product {
             this.partNumber = partNumber;
             this.name = name;
             this.description = description;
-            this.unit = "each";
+            this.unit = "1";
             this.price = price;
             this.vendorId = vendorId;
             this.isActive = true

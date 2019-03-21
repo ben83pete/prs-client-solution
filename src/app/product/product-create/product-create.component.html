@@ -3,3 +3,43 @@
     <span class= "font-weight-bold">Create New Product</span><span> | </span>
     <a routerLink= '/product/list'> Return to Product List</a>
   </div>
+
+  <div>
+    <table class= 'table table-sm'>
+      <tr>
+        <td>Vendor<td><span>
+          <td>
+            <select  [(ngModel)] = 'product.vendorId'><option *ngFor= 'let vendor of vendors'
+               [ngValue] = "vendor.id"> {{vendor.name}}</option></select>
+          </td></span>
+      </tr>
+      <tr>
+        <td>Part Number</td>
+        <td><input [(ngModel)]='product.partNumber' class='inputstring' type= 'text'> </td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td><input [(ngModel)]='product.name' class='inputstring' type= 'text'></td>
+      <tr>
+        <td>Description</td>
+        <td><input [(ngModel)] = 'product.description' class ='inputstring' type= 'text'></td>
+      </tr>
+      <tr> 
+        <td>Unit</td>
+        <td><input [(ngModel)] = 'product.unit' class = 'inputstring' type= 'text'></td>
+      </tr>
+      <tr>
+        <td>Price</td> 
+        <td><input [(ngModel)] = 'product.price' class = 'inputstring' type= 'number'></td>
+      </tr>
+      
+      <tr>
+          <td>Active</td>
+          <td><input [(ngModel)]='product.isActive' class='inputstring' type= 'checkbox'> </td>
+        </tr> 
+        <tr>
+        <button (click)= "save()">Save</button>
+      </tr>  
+    </table>
+    </div>
+    
