@@ -1,3 +1,26 @@
-<p>
-  request-edit works!
-</p>
+<app-menu></app-menu>
+<div>
+  <span class= "font-weight-bold">Edit Request</span><span> | </span>
+  <span><a routerLink = "/request/list">Return to Request List</a></span>
+</div>
+
+<div>
+    <table *ngIf = 'request' class = 'table table-sm'>
+      <tr>
+        <td>Description</td>
+        <td><input [(ngModel)]='request.description' class='inputstring' type= 'text'> </td>
+      </tr>
+      <tr>
+        <td>Justification</td>
+        <td><input [(ngModel)] = 'request.justification' class ='inputstring' type= 'text'></td>
+      </tr>
+      <tr> 
+        <td>Delivery Method</td>
+        <td><input [(ngModel)] = 'request.delivery_Mode' class = 'inputstring' type= 'text'></td>
+      </tr>
+      
+      <tr>
+      <button (click)= "save()">Submit</button>
+      </tr>  
+    </table>
+  </div>

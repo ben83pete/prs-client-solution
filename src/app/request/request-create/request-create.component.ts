@@ -3,6 +3,7 @@ import { Request } from '../request.class';
 import { RequestService } from '../request.service';
 import { Router } from '@angular/router';
 import { User } from '../../user/user.class';
+import { SystemService } from '../../system/system.service';
 
 
 @Component({
@@ -13,21 +14,23 @@ import { User } from '../../user/user.class';
 export class RequestCreateComponent implements OnInit {
 
   user: User[];
-  request: Request = new Request('','','','','','',0,0)
+  request: Request = new Request('New Request','','','','','Pending',0,1)
+
 
   save(): void{
     this.requestsrvc.create(this.request)
       .subscribe(
-        resp =>{ // successful add
+        resp =>{
           console.log(resp);
           this.router.navigateByUrl('request/list');
         },
-        err =>{ console.error(err);} // error when adding new user
+        err =>{ console.error(err);} 
       );
   }
 
 
-  constructor(private requestsrvc: RequestService, private router:Router,) { }
+  constructor(private requestsrvc: RequestService, private router:Router,
+     private syssvc: SystemService ) { }
 
   ngOnInit() {
   }

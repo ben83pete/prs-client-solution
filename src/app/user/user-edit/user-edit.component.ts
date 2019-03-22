@@ -21,7 +21,7 @@ export class UserEditComponent implements OnInit {
         this.router.navigateByUrl("/user/list");
       },
       err => {
-        console.log("User Error", err);
+        console.log("Update User Error", err);
       }
     )
   }

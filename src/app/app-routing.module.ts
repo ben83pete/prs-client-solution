@@ -25,6 +25,12 @@ import { RequestCreateComponent } from './request/request-create/request-create.
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 
+import { RequestLineListComponent } from './requestLine/request-line-list/request-line-list.component';
+import { RequestLineEditComponent } from './requestLine/request-line-edit/request-line-edit.component';
+import { RequestLineCreateComponent } from './requestLine/request-line-create/request-line-create.component';
+import { RequestLineDetailComponent } from './requestLine/request-line-detail/request-line-detail.component';
+
+
 
 const routes: Routes = [
   { path:'', redirectTo: '/home', pathMatch: 'full'},  // always first
@@ -45,6 +51,10 @@ const routes: Routes = [
   { path: 'request/detail/:id', component: RequestDetailComponent },
   { path: 'request/create', component: RequestCreateComponent },
   { path: 'request/edit/:id', component: RequestEditComponent },
+  { path: 'request_lines/list/:id', component: RequestLineListComponent },
+  { path: 'request_lines/create', component: RequestLineCreateComponent},
+  { path: 'request_lines/edit/:id', component: RequestLineEditComponent },
+  { path: 'request_lines/detail/:id', component: RequestLineDetailComponent },
   { path: 'home', component: HomeComponent},
   { path: 'about', component: AboutComponent},
   { path: '**', component: HomeComponent} // always Last

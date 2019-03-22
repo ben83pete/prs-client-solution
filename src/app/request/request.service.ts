@@ -22,11 +22,11 @@ export class RequestService {
   }
 
   update(request: Request):Observable<any>{
-    return this.http.put(`${url}users/${request.id}`, request) as Observable<any>;
+    return this.http.put(`${url}requests/${request.id}`, request) as Observable<any>;
   }
   
   delete(request: Request):Observable<any>{
-    return this.http.delete(`${url}users/${request.id}`) as Observable<any>;
+    return this.http.delete(`${url}requests/${request.id}`) as Observable<any>;
   }
 
   constructor(private http: HttpClient) { }

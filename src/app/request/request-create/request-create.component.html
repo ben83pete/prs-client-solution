@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 <div>
-  <span>Create New Request</span><span> | </span>
-  <span><a routerLink = "/request/list">Return to Requet List</a></span>
+  <span class= "font-weight-bold">Create New Request</span><span> | </span>
+  <span><a routerLink = "/request/list">Return to Request List</a></span>
 </div>
 
 <div>
@@ -15,7 +15,7 @@
         <td><input [(ngModel)] = 'request.justification' class ='inputstring' type= 'text'></td>
       </tr>
       <tr> 
-        <td>Delivery Mode</td>
+        <td>Delivery Method</td>
         <td><input [(ngModel)] = 'request.delivery_Mode' class = 'inputstring' type= 'text'></td>
       </tr>
       <tr>
@@ -23,19 +23,7 @@
         <td><input [(ngModel)] = 'request.submitDate' class = 'inputstring' type= 'date'></td>
       </tr>
       <tr>
-        <td>Total</td>
-        <td><input [(ngModel)] = 'request.total' class = 'inputstring' type= 'number'></td>
-      </tr>
-      <tr>
-          <td>Status</td>
-          <td><input [(ngModel)]='request.status' class='inputstring' type= 'text'> </td>
-        </tr> 
-        <tr>
-          <td>Reject Reason</td>
-          <td><input [(ngModel)] ='request.reject_Reason' class = 'inputstring' type='text'></td>
-        </tr>
-      <tr>
-        <button (click)= "save()">Save</button>
+      <button (click)= "save()">Submit</button>
       </tr>  
     </table>
   </div>

@@ -2,28 +2,28 @@ export class Request{
 
     id: number;
     description: string;
-    justify: string;
-    rejectReason: string;
-    deliveryMode: string;
+    justification: string;
+    reject_Reason: string;
+    delivery_Mode: string;
     submitDate: string;
     status: string;
     total: number;
     userId: number;
-    isActive: boolean;
+    active: boolean;
 
-    constructor( description: string, justify: string, rejectReason: string, deliveryMode: string,
+    constructor( description: string, justification: string, reject_Reason: string, delivery_Mode: string,
         submitDate: string, status: string, total: number, userId: number){
 
             this.id = 0;
             this.description = description;
-            this.justify = justify;
-            this.rejectReason = rejectReason;
-            this.deliveryMode = deliveryMode;
+            this.justification = justification;
+            this.reject_Reason = reject_Reason;
+            this.delivery_Mode = delivery_Mode;
             this.submitDate = submitDate;
             this.status = status;
             this.total = total;
             this.userId = userId;
-            this.isActive = true;
+            this.active = true;
         }
 
 }

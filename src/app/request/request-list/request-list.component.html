@@ -13,8 +13,7 @@
       <th>Date Submitted</th>
       <th>Total</th>
       <th>Status</th>
-      <th>Reject Reason</th>
-      <th>Action:</th>
+      <th>Details</th>
       
     </thead>
     <tbody >
@@ -25,11 +24,9 @@
         <td>{{request.submitDate}}</td>
         <td>{{request.total}}</td>
         <td>{{request.status}}</td>
-        <td>{{request.reject_Reason}}</td>
         <td>
-            <a routerLink = "/request/detail/{{request.id}}">Detail | </a>
-            <a routerLink = "/request/edit/{{request.id}}">Edit</a>
-          </td>
+          <a routerLink = "/request/detail/{{request.id}}">View</a>
+        </td>
       </tr>
     </tbody>
   </table>

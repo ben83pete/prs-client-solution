@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<div>
+  <span class= "font-weight-bold">Request Details</span><span> | </span>
+</div>
+<div>
+    <table class='table table-sm' *ngIf="requests" >
+      <th>Created By:</th>
+      <td>{{requests.user.firstName}} {{requests.user.lastName}}</td>
+      <th>Description:</th>
+      <td>{{requests.description}}</td>
+      <th>Total:</th>
+      <td>{{requests.total}}</td>
+      <th>Status:</th>
+      <td>{{requests.status}}</td>
+    </table>
+</div>
+
+<table class='table table-sm'>
+  <th>Lines Item Details</th>
+  <tbody>
+    <tr>Product:</tr>
+    <tr>Description:</tr>
+    <tr>Price:</tr>
+    <tr>Vendor:</tr>
+  </tbody>
+</table>
+
+   

@@ -13,7 +13,6 @@ export class RequestListComponent implements OnInit {
 
   requests: Request[];
 
-
   constructor(private requestsrvc: RequestService) { }
 
   ngOnInit() {
