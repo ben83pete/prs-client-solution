@@ -18,12 +18,15 @@ import { RequestService } from '../../request/request.service';
 })
 export class RequestLineListComponent implements OnInit {
 
-  requestLines: RequestLine[];
+  requestLines: RequestLine;
   requests: Request;
   user: User;
+  product: Product[];
+  vendor: Vendor[];
+  
 
-  constructor(private requestLinesrvc: RequestLineService, private syssvc: SystemService,
-     private route: ActivatedRoute, private requestsrvc: RequestService, ) { }
+  constructor( private syssvc: SystemService, private route: ActivatedRoute,
+     private requestsrvc: RequestService, ) { }
 
   ngOnInit() {
     let rid = this.route.snapshot.params.id;
@@ -32,12 +35,6 @@ export class RequestLineListComponent implements OnInit {
       console.log(resp);
       this.requests = resp;
     }); 
-
-    // this.requestLinesrvc.list(this.request.id)
-    //   .subscribe(resp => {
-    //     console.log(resp);
-    //     this.requestLines = resp;
-    //   })
-  }
-
+    
+ }
 }

@@ -39,11 +39,9 @@
             <td>Reject Reason</td>
             <td>{{request.reject_Reason}}</td>
         </tr>
+        
         <tr>
-            <a routerLink = "/request/edit/{{request.id}}"><button>Edit</button></a>
-        </tr>
-        <tr>
-            <a routerLink = "/request_lines/list/{{request.id}}"><button>Add Items</button></a>
+            <a routerLink = "/request_lines/list/{{request.id}}"><button>View Line Items</button></a>
         </tr>   
       </table>
       <button (click) = "verifyDelete()" class = 'btn btn-warning'> Delete</button>

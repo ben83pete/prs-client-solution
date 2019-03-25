@@ -1,3 +1,18 @@
-<p>
-  request-line-detail works!
-</p>
+<app-menu></app-menu>
+<div>
+  <span class= "font-weight-bold">Request Details</span><span> | </span>
+  <a routerLink = "/request_lines/list"><button>Return to Request</button></a>
+</div>
+
+<div>
+  <table *ngIf = 'products'>
+      <tr>
+          <td>Product<td><span>
+            <td>
+              <select  [(ngModel)] = 'product.id'><option *ngFor= 'let produt of products'
+                 [ngValue] = "product.id"> {{product.name}}</option></select>
+            </td></span>
+        </tr>
+  </table>
+</div>
+

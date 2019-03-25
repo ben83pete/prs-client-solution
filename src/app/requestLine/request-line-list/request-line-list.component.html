@@ -1,28 +1,44 @@
 <app-menu></app-menu>
 <div>
   <span class= "font-weight-bold">Request Details</span><span> | </span>
+  <a routerLink= "/request/list">Return to Request List</a>
 </div>
 <div>
-    <table class='table table-sm' *ngIf="requests" >
-      <th>Created By:</th>
+    <table class='table table-sm' *ngIf="requests">
+      <th>Requested By:</th>
       <td>{{requests.user.firstName}} {{requests.user.lastName}}</td>
       <th>Description:</th>
       <td>{{requests.description}}</td>
+      <th>Reason</th>
+      <td>{{requests.justification}}</td>
       <th>Total:</th>
       <td>{{requests.total}}</td>
       <th>Status:</th>
       <td>{{requests.status}}</td>
     </table>
-</div>
+  </div>
 
-<table class='table table-sm'>
-  <th>Lines Item Details</th>
-  <tbody>
-    <tr>Product:</tr>
-    <tr>Description:</tr>
-    <tr>Price:</tr>
-    <tr>Vendor:</tr>
+<div>
+    <h5>Lines Item Details</h5>
+<table class='table table-sm' *ngIf="requests">
+  <thead>
+    <th>Part Number</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Qty</th>
+    <th>Price</th>
+    <th>Vendor</th>
+  </thead>
+  <tbody *ngFor="let l of requests.requestLines">
+    <td>{{l.product.partNumber}}</td>
+    <td>{{l.product.name}}</td>
+    <td>{{l.product.description}}</td>
+    <td>{{l.qty}}</td>
+    <td>{{l.product.price}}</td>
+    <td>{{l.product.vendor.name}}</td>
   </tbody>
+  <a routerLink = '/request_lines/detail/{{requests.id}}'><button>Add Item</button></a>
 </table>
+</div>
 
    
