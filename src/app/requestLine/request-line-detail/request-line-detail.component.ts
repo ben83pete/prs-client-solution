@@ -5,7 +5,7 @@ import { Product } from '../../product/product.class';
 import { Vendor } from '../../vendor/vendor.class';
 import { SystemService } from '../../system/system.service';
 import { Request } from '../../request//request.class';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { User } from '../../user/user.class';
 import { RequestService } from '../../request/request.service';
 import { ProductService } from '../../product/product.service';
@@ -18,25 +18,38 @@ import { ProductService } from '../../product/product.service';
 export class RequestLineDetailComponent implements OnInit {
 
   requestLines: RequestLine;
-  requests: Request;
+  request: Request;
   products: Product[];
-  vendors: Vendor;
+  vendors: Vendor[];
+  rid: number;
+
+
+  add(): void{
+    this.request.id = this.rid;
+    this.requestLinesrvc.update(this.requestLines)
+    .subscribe( resp =>{
+      console.log(resp);
+    },
+    err => {console.error(err);}
+      )};
 
   constructor(private syssvc: SystemService, private productsrvc: ProductService,
-    private route: ActivatedRoute, private requestsrvc: RequestService, ) { }
+    private route: ActivatedRoute, private requestsrvc: RequestService,
+     private requestLinesrvc: RequestLineService, private router: Router, ) { }
 
   ngOnInit() {
-    let rid = this.route.snapshot.params.id;
-    this.requestsrvc.get(rid) 
+    let id = this.route.snapshot.params.id;
+    this.requestsrvc.get(id) 
     .subscribe(resp =>{
       console.log(resp);
-      this.requests = resp;
+      this.request = resp;
+      this.rid = id;
     });
+    
     this.productsrvc.list()
       .subscribe(resp => {
         console.log(resp);
         this.products = resp;
     });
   }
-
 }

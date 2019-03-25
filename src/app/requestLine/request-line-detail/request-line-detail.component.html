@@ -1,18 +1,32 @@
 <app-menu></app-menu>
 <div>
   <span class= "font-weight-bold">Request Details</span><span> | </span>
-  <a routerLink = "/request_lines/list"><button>Return to Request</button></a>
 </div>
 
 <div>
-  <table *ngIf = 'products'>
-      <tr>
-          <td>Product<td><span>
-            <td>
-              <select  [(ngModel)] = 'product.id'><option *ngFor= 'let produt of products'
-                 [ngValue] = "product.id"> {{product.name}}</option></select>
-            </td></span>
-        </tr>
+  <table class='table table-sm' *ngIf = 'request'>
+      <thead>
+          <!-- <td>Product<td><span>
+              <td>
+                <select  [(ngModel)] = 'request.requestLines.productId'><option *ngFor= 'let product of products'
+                   [ngValue] = "product.id"> {{product.name}}</option></select>
+              </td></span> -->
+          <th>Name</th>
+          <th>Description</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Vendor</th>
+          <th>Add Item</th>
+        </thead>
+
+      <tbody *ngFor="let product of products">
+          <td>{{product.name}}</td>
+          <td>{{product.description}}</td>
+          <td><input [(ngModel)] = 'product.unit' class = 'inputstring' type= 'number'></td>
+          <td>{{product.price}}</td>
+          <td>{{product.vendor.name}}</td>
+          <a routerLink = "/request_lines/list/{{request.id}}"><button (click)= "add()">Add</button></a>
+        </tbody>
+      <a routerLink = "/request_lines/list/{{request.id}}"><button>Return to Request</button></a>
   </table>
 </div>
-

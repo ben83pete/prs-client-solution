@@ -8,19 +8,19 @@
     <table>
       <tr>
         <td>Description</td>
-        <td><input [(ngModel)]='request.description' class='inputstring' type= 'text'> </td>
+        <td><input [(ngModel)]='request.description' type= 'text'> </td>
       </tr>
       <tr>
         <td>Justification</td>
-        <td><input [(ngModel)] = 'request.justification' class ='inputstring' type= 'text'></td>
+        <td><input [(ngModel)] = 'request.justification' type= 'text'></td>
       </tr>
       <tr> 
         <td>Delivery Method</td>
-        <td><input [(ngModel)] = 'request.delivery_Mode' class = 'inputstring' type= 'text'></td>
+        <td><input [(ngModel)] = 'request.delivery_Mode' type= 'text'></td>
       </tr>
       <tr>
         <td>Date Submitted</td> 
-        <td><input [(ngModel)] = 'request.submitDate' class = 'inputstring' type= 'date'></td>
+        <td><input [(ngModel)] = 'request.submitDate' text-date-input type= 'text'></td>
       </tr>
       <tr>
       <button (click)= "save()">Submit</button>

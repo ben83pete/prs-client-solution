@@ -14,8 +14,7 @@ import { SystemService } from '../../system/system.service';
 export class RequestCreateComponent implements OnInit {
 
   user: User[];
-  request: Request = new Request('New Request','','','','','Pending',0,1)
-
+  request: Request = new Request('New Request','','','','','',0,1)
 
   save(): void{
     this.requestsrvc.create(this.request)
@@ -27,7 +26,6 @@ export class RequestCreateComponent implements OnInit {
         err =>{ console.error(err);} 
       );
   }
-
 
   constructor(private requestsrvc: RequestService, private router:Router,
      private syssvc: SystemService ) { }
