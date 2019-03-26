@@ -1,3 +1,27 @@
-<p>
-  request-line-edit works!
-</p>
+<app-menu></app-menu>
+<div>
+  <span class= "font-weight-bold">Edit Request Line</span><span> | </span>
+
+</div>
+<div *ngIf = 'requestLine'>
+  <table class='table table-sm' >
+    <thead>
+      <th>Product</th>
+      <th>Qty</th>
+      <th>Price</th>
+      <th>Edit/Delete</th>
+    </thead>
+    <tbody>
+      <td>
+        <select  [(ngModel)] = 'requestLine.productId'>
+        <option  *ngFor= 'let product of products' [ngValue] = "product.id"> {{product.name}}</option></select>
+      </td>
+      <td><input [(ngModel)]='requestLine.qty' type= 'number'> </td>
+      <td>{{requestLine.product.price * requestLine.qty }}</td>
+      <button (click)= "edit()">Edit</button>
+      <button (click)= "delete()">Delete</button>
+    </tbody>
+
+      <a routerLink = "/request_lines/list/{{requestLine.requestId}}"><button>Return to Request</button></a>
+  </table>
+</div>

@@ -34,6 +34,7 @@ export class RequestLineListComponent implements OnInit {
     .subscribe(resp =>{
       console.log(resp);
       this.requests = resp;
+      this.requests.id= rid;
     }); 
     
  }

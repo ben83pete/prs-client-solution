@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RequestLine } from './requestLine.class';
-import { Request } from '../request/request.class';
 
 const url = "http://localhost:53058/api/";
 
@@ -14,7 +13,7 @@ export class RequestLineService {
   // request: Request[];
 
   list(id: number): Observable<RequestLine[]>{
-    return this.http.get(`${url}request_Lines/list/${id}`) as Observable<RequestLine[]>;
+    return this.http.get(`${url}request_Lines`) as Observable<RequestLine[]>;
   }
   get(id: string): Observable<any>{
     return this.http.get(`${url}request_lines/${id}`) as Observable<any>;

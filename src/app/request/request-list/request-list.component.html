@@ -26,8 +26,9 @@
         <td>{{request.status}}</td>
         <td>
           <a routerLink = "/request/detail/{{request.id}}">View | </a>
-          <a routerLink = "/request/edit/{{request.id}}">Edit</a>
-      </td>
+          <a routerLink = "/request/edit/{{request.id}}">Edit | </a>
+          <a routerLink = "/request_lines/list/{{request.id}}">Lines </a>
+        </td>
       </tr>
     </tbody>
   </table>

@@ -28,17 +28,17 @@
     <th>Qty</th>
     <th>Price</th>
     <th>Vendor</th>
+    <th>Edit</th>
   </thead>
-  <tbody *ngFor="let l of requests.requestLines">
-    <td>{{l.product.partNumber}}</td>
-    <td>{{l.product.name}}</td>
-    <td>{{l.product.description}}</td>
-    <td>{{l.qty}}</td>
-    <td>{{l.product.price}}</td>
-    <td>{{l.product.vendor.name}}</td>
+  <tbody *ngFor="let rl of requests.requestLines">
+    <td>{{rl.product.partNumber}}</td>
+    <td>{{rl.product.name}}</td>
+    <td>{{rl.product.description}}</td>
+    <td>{{rl.qty}}</td>
+    <td>{{rl.product.price * rl.qty}}</td>
+    <td>{{rl.product.vendor.name}}</td>
+    <a routerLink = '/request_lines/edit/{{rl.id}}'>Edit</a>
   </tbody>
-  <a routerLink = '/request_lines/detail/{{requests.id}}'><button>Add Item</button></a>
+  <a routerLink = '/request_lines/create/{{requests.id}}'><button>Add Item</button></a>
 </table>
 </div>
-
-   

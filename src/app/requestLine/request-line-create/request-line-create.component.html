@@ -1,3 +1,25 @@
-<p>
-  request-line-create works!
-</p>
+<app-menu></app-menu>
+<div>
+  <span class= "font-weight-bold">Add Item to Request</span><span> | </span>
+</div>
+
+<div>
+  <table class='table table-sm' *ngIf = 'request'>
+      <thead>
+          <td>Product<td><span>
+              <td>
+                <select  [(ngModel)] = 'requestLine.productId'>
+                  <option *ngFor= 'let product of products'
+                   [ngValue] = "product.id"> {{product.name}}</option></select>
+              </td></span>
+          <td>Qty<td><span>
+            <td>
+              <input [(ngModel)] = 'requestLine.qty' type= 'number'>
+            </td></span>
+            <a routerLink = "/request_lines/list/{{request.id}}"><button (click)= "add()">Add</button></a>
+
+        </thead>
+
+      <a routerLink = "/request_lines/list/{{request.id}}"><button>Return to Request</button></a>
+  </table>
+</div>

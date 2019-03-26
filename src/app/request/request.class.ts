@@ -19,7 +19,7 @@ export class Request{
             this.justification = justification;
             this.reject_Reason = reject_Reason;
             this.delivery_Mode = delivery_Mode;
-            this.submitDate = submitDate;
+            this.submitDate = (new Date()).toISOString();
             this.status = status;
             this.total = total;
             this.userId = userId;
