@@ -9,35 +9,35 @@
     <table>
       <tr>
         <td>Username</td>
-        <td><input [(ngModel)]='user.Username' class='inputstring' type= 'text'> </td>
+        <td><input [(ngModel)]='user.Username' type= 'text'> </td>
       </tr>
       <tr>
           <td>Password</td>
-          <td><input id='PassInput' [(ngModel)]='user.Password' class='inputstring' type= 'password' 
+          <td><input id='PassInput' [(ngModel)]='user.Password'type= 'password' 
             pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$"> </td>
       <tr>
         <td>First Name</td>
-        <td><input [(ngModel)] = 'user.firstName' class ='inputstring' type= 'text'></td>
+        <td><input [(ngModel)] = 'user.firstName' type= 'text'></td>
       </tr>
       <tr> 
         <td>Last Name</td>
-        <td><input [(ngModel)] = 'user.lastName' class = 'inputstring' type= 'text'></td>
+        <td><input [(ngModel)] = 'user.lastName' type= 'text'></td>
       </tr>
       <tr>
         <td>Phone Number</td> 
-        <td><input [(ngModel)] = 'user.Phone' class = 'inputstring' type= 'text'></td>
+        <td><input [(ngModel)] = 'user.Phone' type= 'text'></td>
       </tr>
       <tr>
         <td>Email Address</td>
-        <td><input [(ngModel)] = 'user.Email' class = 'inputstring' type= 'email'></td>
+        <td><input [(ngModel)] = 'user.Email' type= 'email'></td>
       </tr>
       <tr>
           <td>Admin</td>
-          <td><input [(ngModel)]='user.isAdmin' class='inputstring' type= 'checkbox'> </td>
+          <td><input [(ngModel)]='user.isAdmin' type= 'checkbox'> </td>
         </tr> 
         <tr>
           <td>Reviewer</td>
-          <td><input [(ngModel)] ='user.isReviewer' class = 'inputstring' type='checkbox'></td>
+          <td><input [(ngModel)] ='user.isReviewer' type='checkbox'></td>
       <tr>
         <button (click)= "save()">Save</button>
       </tr>  

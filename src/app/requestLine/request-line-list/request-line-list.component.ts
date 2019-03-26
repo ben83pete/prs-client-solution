@@ -10,7 +10,6 @@ import { User } from '../../user/user.class';
 import { RequestService } from '../../request/request.service';
 
 
-
 @Component({
   selector: 'app-request-line-list',
   templateUrl: './request-line-list.component.html',
@@ -23,7 +22,7 @@ export class RequestLineListComponent implements OnInit {
   user: User;
   product: Product[];
   vendor: Vendor[];
-  
+
 
   constructor( private syssvc: SystemService, private route: ActivatedRoute,
      private requestsrvc: RequestService, ) { }

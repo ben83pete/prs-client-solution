@@ -33,6 +33,14 @@ export class RequestDetailComponent implements OnInit {
     )
   }
 
+  review(){
+    this.requestsrvc.review(this.request)
+    .subscribe(resp =>{
+      console.log(resp);
+      this.router.navigateByUrl(`/request/list`);
+    })
+  }
+
   
   constructor(private requestsrvc: RequestService, private router:Router,
     private syssvc: SystemService, private route: ActivatedRoute) { }
@@ -45,5 +53,4 @@ export class RequestDetailComponent implements OnInit {
         this.request = resp;
       })
   }
-
 }

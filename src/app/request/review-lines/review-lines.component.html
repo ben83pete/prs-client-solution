@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<div class="font-weight-bold">The Review Page</div>
+<div>
+
+<div>
+    <h5>Lines Item Details</h5>
+<table class='table table-sm' *ngIf="request">
+  <thead>
+    <th>Part Number</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Qty</th>
+    <th>Price</th>
+    <th>Vendor</th>
+    <th>Reject Reason</th>
+    <th>Approve | Deny</th>  
+  </thead>
+  <tbody *ngFor="let rl of request.requestLines">
+    <td>{{rl.product.partNumber}}</td>
+    <td>{{rl.product.name}}</td>
+    <td>{{rl.product.description}}</td>
+    <td>{{rl.qty}}</td>
+    <td>{{rl.product.price * rl.qty}}</td>
+    <td>{{rl.product.vendor.name}}</td>
+    <td><input [(ngModel)]= 'reject_Reason' type ='text'></td>
+    <button (click)= "approve()">Approve</button>
+    <button (click)= "reject()">Reject</button>
+  </tbody>
+</table>
+</div>

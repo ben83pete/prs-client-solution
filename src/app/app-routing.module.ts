@@ -30,6 +30,8 @@ import { RequestLineEditComponent } from './requestLine/request-line-edit/reques
 import { RequestLineCreateComponent } from './requestLine/request-line-create/request-line-create.component';
 import { RequestLineDetailComponent } from './requestLine/request-line-detail/request-line-detail.component';
 
+import { ReviewComponent } from './request/review/review.component';
+import { ReviewLinesComponent } from './request/review-lines/review-lines.component';
 
 
 const routes: Routes = [
@@ -55,6 +57,8 @@ const routes: Routes = [
   { path: 'request_lines/create/:id', component: RequestLineCreateComponent},
   { path: 'request_lines/edit/:id', component: RequestLineEditComponent },
   { path: 'request_lines/detail/:id', component: RequestLineDetailComponent },
+  { path: 'request/review', component: ReviewComponent },
+  { path: 'request/review/lines/:id', component: ReviewLinesComponent },
   { path: 'home', component: HomeComponent},
   { path: 'about', component: AboutComponent},
   { path: '**', component: HomeComponent} // always Last
