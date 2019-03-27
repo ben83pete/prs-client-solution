@@ -16,7 +16,7 @@ export class RequestCreateComponent implements OnInit {
   user: User[];
   request: Request = new Request('New Request','','','','','',0,0)
 
-  
+
   save(): void{
     this.request.userId = this.syssvc.currentUser.id;
     this.requestsrvc.create(this.request)
@@ -33,7 +33,6 @@ export class RequestCreateComponent implements OnInit {
      private syssvc: SystemService ) { }
 
   ngOnInit() {
-    let currentUser = this.syssvc.currentUser.id;
+    this.syssvc.currentUser.id;
   }
-
 }
