@@ -14,9 +14,11 @@ import { SystemService } from '../../system/system.service';
 export class RequestCreateComponent implements OnInit {
 
   user: User[];
-  request: Request = new Request('New Request','','','','','',0,1)
+  request: Request = new Request('New Request','','','','','',0,0)
 
+  
   save(): void{
+    this.request.userId = this.syssvc.currentUser.id;
     this.requestsrvc.create(this.request)
       .subscribe(
         resp =>{
@@ -31,6 +33,7 @@ export class RequestCreateComponent implements OnInit {
      private syssvc: SystemService ) { }
 
   ngOnInit() {
+    let currentUser = this.syssvc.currentUser.id;
   }
 
 }

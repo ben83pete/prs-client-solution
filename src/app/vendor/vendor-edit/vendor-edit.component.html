@@ -5,7 +5,7 @@
       <a routerLink= '/vendor/list'> Return to Vendor List</a>
     </div>
 <div *ngIf = 'vendor'>
-    <table>
+    <table class= "table table-bordered table-sm">
         <tr>
             <td>Name</td>
             <td><input [(ngModel)]='vendor.name' class='inputstring' type= 'text'> </td>

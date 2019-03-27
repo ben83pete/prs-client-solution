@@ -29,6 +29,7 @@ export class RequestLineCreateComponent implements OnInit {
     this.requestLinesrvc.create(this.requestLine)
     .subscribe( resp =>{
       console.log(resp);
+      this.router.navigateByUrl(`/request_lines/list/${this.request.id}`)
     },
 
     err => {console.error(err);}

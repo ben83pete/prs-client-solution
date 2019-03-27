@@ -1,10 +1,10 @@
 <app-menu></app-menu>
-<div>
+<div class= 'textbig'>
   <span class= "font-weight-bold">Vendor Details</span><span> | </span>
   <a routerLink= '/vendor/list'> Return to Vendor List</a>
 </div>
 
-<table class="border table table-sm" *ngIf="vendor">
+<table class="table table-bordered table-sm" *ngIf="vendor">
     <tr>
         <td>Name</td><td>{{vendor.name}}</td>
     </tr>

@@ -17,7 +17,7 @@ export class ReviewComponent implements OnInit {
 
   ngOnInit() 
   {
-    this.requestsrv.list()
+    this.requestsrv.getReview()
       .subscribe( resp => 
         {
           console.log(resp);

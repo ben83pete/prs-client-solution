@@ -1,12 +1,12 @@
 <app-menu></app-menu>
-<div>
+<div class= 'textbig'>
 <span class= "font-weight-bold">User List |</span>
 <a routerLink = '/user/create'> Create New User</a>
-<span> | <input [(ngModel)]='searchCriteria' type='text'></span>
+<span> | Search<input [(ngModel)]='searchCriteria' type='text'></span>
 </div>
 <div>
-  <table class ="table">
-    <thead class="font-weight-bold text-nowrap">
+  <table class ="table table-hover table-sm">
+    <thead class="font-weight-bold text-nowrap" >
         <th><a (click) = "sortBy('lastName')">Name:</a></th>
         <th><a (click) = "sortBy('userName')">User Name:</a></th>
         <th><a (click) = "sortBy('phone')">Phone:</a></th>

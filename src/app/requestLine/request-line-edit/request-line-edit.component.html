@@ -8,7 +8,6 @@
     <thead>
       <th>Product</th>
       <th>Qty</th>
-      <!-- <th>Price</th> -->
       <th>Edit/Delete</th>
     </thead>
     <tbody>
@@ -17,8 +16,7 @@
         <option  *ngFor= 'let product of products' [ngValue] = "product.id"> {{product.name}}</option></select>
       </td>
       <td><input [(ngModel)]='requestLine.qty' type= 'number'> </td>
-      <!-- <td>{{requestLine.product.price * requestLine.qty }}</td> -->
-      <button (click)= "edit()">Save</button>
+      <button (click)= "edit()">Edit</button>
       <button (click)= "delete()">Delete</button>
     </tbody>
 

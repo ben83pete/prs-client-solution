@@ -1,7 +1,6 @@
 <app-menu></app-menu>
 <div>
   <span class= "font-weight-bold">Request Details</span><span> | </span>
-  <a routerLink= "/request/list">Return to Request List</a>
 </div>
 <div>
     <table class='table table-sm' *ngIf="requests">
@@ -28,7 +27,7 @@
     <th>Qty</th>
     <th>Price</th>
     <th>Vendor</th>
-    <th>Edit | Delete</th>
+    <th>Edit</th>
   </thead>
   <tbody *ngFor="let rl of requests.requestLines">
     <td>{{rl.product.partNumber}}</td>
@@ -37,8 +36,10 @@
     <td>{{rl.qty}}</td>
     <td>{{rl.product.price * rl.qty}}</td>
     <td>{{rl.product.vendor.name}}</td>
-    <a routerLink = '/request_lines/edit/{{rl.id}}'>Edit</a>
+    <a routerLink = '/request_lines/edit/{{rl.id}}'><button>Edit</button></a>
   </tbody>
+  <br>
   <a routerLink = '/request_lines/create/{{requests.id}}'><button>Add Item</button></a>
+  <a routerLink = "/request/list"><button>Return to Request List</button></a>
 </table>
 </div>
